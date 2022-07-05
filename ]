@@ -26,16 +26,13 @@
                 <div editable="rich">
                     <table class="table table-striped">
                         <tbody>
-                            {% for dojo in all_dojos %}
                             <tr>
-                                <td>{{dojo.name}}</td>
+                                {% for dojo in all_dojos %}
+                                <td>{{dojo['name']}}</td>
+                                {% endfor %}
                             </tr>
-                            {% endfor %}
                         </tbody>
                     </table>
-                    <div class="btn-home">
-                        <a class="btn btn-primary btn-sm px-4 gap-3" href="/ninja" role="button">Add ninja</a>
-                    </div>
             </td>
         </tr>
     </table>
