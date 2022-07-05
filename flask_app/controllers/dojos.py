@@ -1,7 +1,7 @@
+# controllers.dojos
 from flask_app import app
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_app.models.dojo import Dojo
-
 
 @app.route('/')
 def index():
@@ -27,3 +27,12 @@ def add_dojo():
     Dojo.create_dojo(data)
     # Redirect back to dojos page
     return redirect('/dojos')
+
+@app.route('/dojos/<int:dojo_id>')
+def show_all_ninja(dojo_id):
+    """Show all the ninja of a particular dojo"""
+    data = {
+        'dojo_id': dojo_id
+    }
+    dojo = Dojo.get_dojo_and_all_ninjas(data)
+    return render_template('dojo_show.html', all_ninjas=ninjas)
