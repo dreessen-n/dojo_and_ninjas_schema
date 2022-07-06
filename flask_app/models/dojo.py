@@ -47,5 +47,6 @@ class Dojo:
                 'dojo_id': row_in_db['dojo_id']
             }
             dojo.ninjas.append(Ninja(ninja_data))
+        print(dojo)
         return dojo
 
