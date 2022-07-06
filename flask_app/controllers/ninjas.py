@@ -5,13 +5,13 @@ from flask import Flask, render_template, request, redirect, session, url_for
 from flask_app.models.ninja import Ninja
 from flask_app.models.dojo import Dojo
 
-@app.route('/ninja')
+@app.route('/ninjas')
 def display_page():
     """Show create ninja page"""
     dojos = Dojo.show_all_dojos()
     return render_template('ninjas.html', dojos=dojos)
 
-@app.route('/ninja/create', methods=['POST'])
+@app.route('/ninjas/create', methods=['POST'])
 def add_ninja():
     """Add a new ninja to a particular dojo"""
     data = {

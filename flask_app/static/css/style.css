@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: navajowhite;
+}
+
+.container {
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
 .input-group {
     margin-bottom: 10px;
 }
@@ -12,6 +23,11 @@
 .btn-home {
     display: flex;
     justify-content: flex-end;
+}
+
+.btn-ninja {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .new_dojo_form {

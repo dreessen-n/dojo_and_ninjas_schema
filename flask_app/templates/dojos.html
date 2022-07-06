@@ -16,7 +16,9 @@
                 <form  action="/dojos/create", method="POST">
                     <label class="new_dojo_form" for="name">Name:</label>
                     <input class="new_dojo_form" type="text" name="name" id="name">
-                    <input class="new_dojo_form" type="submit" value="Create">
+                    <div class="btn-ninja">
+                        <button class="new_dojo_form btn btn-primary btn-sm px-4 gap-3" type="submit">Add a Dojo</button>
+                    </div>
                 </form>
             </div>
             <div class="col-4">
@@ -31,8 +33,8 @@
                     </tbody>
                 </table>
                 <div editable="rich">
-                    <div class="btn-home">
-                        <a class="btn btn-primary btn-sm px-4 gap-3" href="/ninja" role="button">Add ninja</a>
+                    <div class="btn-ninja">
+                        <a class="btn btn-primary btn-sm px-4 gap-3" href="/ninjas" role="button">Add a ninja</a>
                 </div>
             </div>
         </div>
