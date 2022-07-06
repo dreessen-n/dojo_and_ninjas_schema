@@ -8,7 +8,8 @@ from flask_app.models.dojo import Dojo
 @app.route('/ninja')
 def display_page():
     """Show create ninja page"""
-    return render_template('ninjas.html')
+    dojos = Dojo.show_all_dojos()
+    return render_template('ninjas.html', dojos=dojos)
 
 @app.route('/ninja/create', methods=['POST'])
 def add_ninja():
@@ -19,7 +20,6 @@ def add_ninja():
         'age': request.form['age'],
         'dojo_id': request.form['dojo_id']
     }
-    Dojo.create_ninja(data)
-    return redirect(f"dojos/{request.form['dojo_id']}")
-
-
+    Ninja.create_ninja(data)
+    path = f"/dojos/{request.form['dojo_id']}"
+    return redirect(path)

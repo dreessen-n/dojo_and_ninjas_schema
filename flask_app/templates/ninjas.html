@@ -10,6 +10,22 @@
 </head>
 <body>
     <h1>New Ninja</h1>
+    <form action="/ninja/create" method="POST">
+        <label for="dojo">Select Dojo</label>
+        <select name="dojo_id" id="dojo_id">
+        {% for dojo in dojos %}
+        <option value="{{dojo.id}}">{{dojo.name}}</option>
+        {% endfor %}
+        </select>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
+        <input type="submit" value="Add Ninja">
+
+    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='/js/script.js') }}"></script>
