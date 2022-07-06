@@ -18,6 +18,9 @@ def show_all():
 @app.route('/dojos/create', methods=['POST'])
 def add_dojo():
     """Add a dojo location to the list"""
+    # Do a check that a there a value being passed or redirect
+    if request.form['name'] == '':
+        return redirect('/dojos')
     # Create data dict based on request form
     # The keys must match to exactly the variables in query string
     data = {
