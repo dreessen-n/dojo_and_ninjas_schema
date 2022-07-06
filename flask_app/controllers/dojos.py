@@ -35,4 +35,4 @@ def show_all_ninja(dojo_id):
         'dojo_id': dojo_id
     }
     dojo = Dojo.get_dojo_and_all_ninjas(data)
-    return render_template('dojo_show.html', all_ninjas=ninjas)
+    return render_template('dojo_show.html', dojo=dojo)

@@ -31,7 +31,7 @@ class Dojo:
 
     @classmethod
     def get_dojo_and_all_ninjas(cls,data):
-        query = "SELECT * FROM dojos LEFT JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojo.id = %(dojo_id)s;"
+        query = "SELECT * FROM dojos LEFT JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos.id = %(dojo_id)s;"
         results = connectToMySQL('dojos_and_ninjas_schema').query_db(query,data)
         # Result will be a list of ninjas assigned to a particular dojo
         dojo = cls(results[0])
@@ -42,8 +42,10 @@ class Dojo:
                 'first_name': row_in_db['first_name'],
                 'last_name': row_in_db['last_name'],
                 'age': row_in_db['age'],
-                'dojo_id': row_in_db['dojos.id']
+                'created_at': row_in_db['ninjas.created_at'],
+                'updated_at': row_in_db['ninjas.updated_at'],
+                'dojo_id': row_in_db['dojo_id']
             }
-            Dojo.ninjas.append(Ninja(ninja_data))
+            dojo.ninjas.append(Ninja(ninja_data))
         return dojo
 
