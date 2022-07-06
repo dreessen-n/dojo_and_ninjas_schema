@@ -47,4 +47,3 @@ class Dojo:
             Dojo.ninjas.append(Ninja(ninja_data))
         return dojo
 
-

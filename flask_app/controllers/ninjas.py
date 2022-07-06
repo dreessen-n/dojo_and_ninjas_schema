@@ -3,6 +3,7 @@
 from flask_app import app
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_app.models.ninja import Ninja
+from flask_app.models.dojo import Dojo
 
 @app.route('/ninja')
 def display_page():
